@@ -15,7 +15,6 @@ class DistanceCalculator:
         ret, frame = cap.read()
         cap.release()
 
-        # and measure its pixel width in the frame
         pixel_width = 200  # Measure this from the frame
         self.focal_length = (pixel_width * known_distance) / known_width
         return self.focal_length
