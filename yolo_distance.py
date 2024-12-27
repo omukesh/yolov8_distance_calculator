@@ -8,8 +8,7 @@ model = YOLO('yolov8s-seg.pt')  # or your custom trained model
 
 # Initialize distance calculator with known object dimensions
 distance_calculator = DistanceCalculator(
-    known_width_person=0.4,  # Average person width in meters
-    known_width_monitor=0.3  # Average monitor width in meters
+    known_width_person = known_width_monitor = 0.4   # Average widthof specified classes in meters 
 )
 
 cctv_url = config.CCTV_URL
@@ -34,10 +33,10 @@ while(cap.isOpened()):
         for box in result.boxes:
             class_id = int(box.cls[0])
             if class_id == 0:  # Person
-                distance = distance_calculator.calculate_distance_person(box)
+                distance = distance_calculator.calculate_distance_class(box)
                 label = f"Person {distance:.2f}m"
-            elif class_id == 62:  # Monitor (adjust class ID if needed)
-                distance = distance_calculator.calculate_distance_monitor(box)
+            elif class_id == 62:  # Monitor
+                distance = distance_calculator.calculate_distance_class(box)
                 label = f"Monitor {distance:.2f}m"
             else:
                 continue
