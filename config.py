@@ -1,1 +1,1 @@
-CCTV_URL = "rtsp://admin:pswd@192.168.x.xxx:554/stream"
+CCTV_URL = "rtsp://admin:pswd@19x.16x.x.xxx:port/stream"
