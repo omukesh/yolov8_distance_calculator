@@ -1,0 +1,1 @@
+CCTV_URL = "rtsp://admin:@nalacam@98765@192.168.8.41:554/stream"
