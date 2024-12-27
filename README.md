@@ -20,7 +20,7 @@ This project uses a YOLOv8 segmentation model to estimate the distance of object
 
 1.  Clone the repository:
     ```bash
-    git clone [invalid URL removed]
+    git clone https://github.com/omukesh/yolov8_distance_calculator
     ```
 2.  Install dependencies:
     ```bash
