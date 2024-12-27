@@ -53,7 +53,7 @@ This project uses a YOLOv8 segmentation model to estimate the distance of object
 ## Notes
 
 *   Ensure the class IDs for "Person" and "Monitor" are correct for your YOLOv8 model.
-*   Adjust the `known_width_person` and `known_width_monitor` values in `distance_calculator.py` if necessary.
+*   Adjust the `known_width` value in `distance_calculator.py` if necessary.
 *   Accurate focal length calibration is crucial for accurate distance estimation.
 *   Performance may vary depending on hardware and scene complexity.
 
