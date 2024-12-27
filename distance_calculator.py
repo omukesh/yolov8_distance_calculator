@@ -11,11 +11,6 @@ class DistanceCalculator:
         self.focal_length = focal_length or self.calculate_focal_length()
 
     def calculate_focal_length(self, img_width=868, known_distance=1, known_width=0.2):
-        """
-        Calculates focal length using a reference object.
-        You'll need to capture an image with a known object at a known distance.
-        """
-        # Capture a frame from your CCTV
         cap = cv2.VideoCapture(cctv_url)  # Replace with your CCTV URL
         ret, frame = cap.read()
         cap.release()
@@ -26,9 +21,8 @@ class DistanceCalculator:
         return self.focal_length
 
     def calculate_distance(self, perceived_width, known_width):
-        """Calculates distance based on perceived width and known width."""
         if self.focal_length is None:
-            raise ValueError("Focal length needs to be calculated or provided.")
+            raise ValueError("Focal length needs to be calculated")
         return (known_width * self.focal_length) / perceived_width
 
     def calculate_distance_person(self, box):
